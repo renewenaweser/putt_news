@@ -12,7 +12,7 @@ export default function NewsArchivePage() {
     <div>
       <h1 className="text-2xl font-bold text-brand-dark">News Archiv</h1>
       <p className="mt-1 text-gray-600">
-        Alle taeglichen Golf & Putting Digests
+        Alle täglichen Golf & Putting Digests
       </p>
 
       <div className="mt-8 space-y-4">

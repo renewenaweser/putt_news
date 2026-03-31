@@ -10,14 +10,14 @@ export default function HomePage() {
     <div>
       <section className="mb-12">
         <p className="text-sm font-medium text-brand-gold uppercase tracking-wide">
-          Taeglich kuratiert
+          Täglich kuratiert
         </p>
         <h1 className="mt-1 text-3xl font-bold text-brand-dark">
           Golf & Putting Insights
         </h1>
         <p className="mt-2 text-gray-600 max-w-xl">
           Aktuelle News, Technologie-Trends und Analysen rund um Putting und
-          Indoor-Golf. Zusammengestellt fuer das Putting Lab.
+          Indoor-Golf. Zusammengestellt für das Putting Lab.
         </p>
       </section>
 
@@ -38,7 +38,7 @@ export default function HomePage() {
       {olderDigests.length > 0 && (
         <section>
           <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
-            Fruehere Digests
+            Frühere Digests
           </h2>
           <div className="space-y-4">
             {olderDigests.map((digest) => (

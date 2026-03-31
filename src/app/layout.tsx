@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Putt News - Golf & Putting Insights",
   description:
-    "Taeglich kuratierte News, Trends und Analysen rund um Golf und Putting fuer das Putting Lab.",
+    "Täglich kuratierte News, Trends und Analysen rund um Golf und Putting für das Putting Lab.",
 };
 
 export default function RootLayout({
