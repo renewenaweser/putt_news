@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-brand-green: #2E7D4F;
+  --color-brand-light: #4CAF6E;
+  --color-brand-dark: #1B3A2D;
+  --color-brand-gold: #C5A55A;
+  --color-brand-cream: #F5F8F6;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.prose h2 {
+  color: var(--color-brand-dark);
+  border-bottom: 1px solid var(--color-brand-cream);
+  padding-bottom: 0.5rem;
+}
+
+.prose a {
+  color: var(--color-brand-green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--color-brand-light);
+}
+
+.prose strong {
+  color: var(--color-brand-dark);
+}
