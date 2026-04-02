@@ -23,6 +23,7 @@ Täglicher Golf/Putting-News-Digest für das Putting Lab Projekt (Indoor-Putting
 - Nutze WebFetch für JEDEN Artikel den du aufnehmen willst
 - Lies den tatsächlichen Inhalt und stelle sicher, dass deine Zusammenfassung nur Fakten enthält, die im Artikel stehen
 - Kein Artikel darf aufgenommen werden, ohne dass sein Inhalt verifiziert wurde
+- Falls WebFetch fehlschlägt (403, Timeout), nutze den Proxy: `https://feed.putting-lab.ch/api/fetch?url=ARTICLE_URL`
 
 ### Nur spezifische Artikel-URLs
 - Jede URL muss zu einem konkreten Artikel führen, nicht zu einer Index- oder Kategorie-Seite
