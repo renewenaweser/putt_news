@@ -11,6 +11,14 @@ Täglicher Golf/Putting-News-Digest für das Putting Lab Projekt (Indoor-Putting
 - Wenn du dir bei einem Fakt unsicher bist: weglassen statt raten
 - Lieber eine kürzere, korrekte Zusammenfassung als eine ausgeschmückte mit erfundenen Details
 
+### Kein erzwungener Putting-Bezug
+- Füge KEINE Putting-Statistiken hinzu, wenn der Artikel keine enthält
+- Ein Turniersieg ist auch ohne Putting-Analyse eine valide News
+- Wenn der Artikel nichts über Putting sagt, erwähne Putting NICHT in der Zusammenfassung
+- Beschreibe nur was im Artikel tatsächlich steht, nicht was thematisch passen würde
+- FALSCH: "Woodland gewinnt mit 8,3 Strokes Gained Putting" (wenn nicht im Artikel)
+- RICHTIG: "Woodland gewinnt die Houston Open mit Turnierrekord von 259 Schlägen (-21)"
+
 ### Quellen-Verifikation (PFLICHT)
 - Nutze WebFetch für JEDEN Artikel den du aufnehmen willst
 - Lies den tatsächlichen Inhalt und stelle sicher, dass deine Zusammenfassung nur Fakten enthält, die im Artikel stehen
