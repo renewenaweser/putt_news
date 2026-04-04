@@ -20,10 +20,11 @@ Täglicher Golf/Putting-News-Digest für das Putting Lab Projekt (Indoor-Putting
 - RICHTIG: "Woodland gewinnt die Houston Open mit Turnierrekord von 259 Schlägen (-21)"
 
 ### Quellen-Verifikation (PFLICHT)
-- Nutze Jina Reader via WebFetch: `https://r.jina.ai/ARTICLE_URL`
-- Jina gibt den Artikel als sauberes Markdown zurück und umgeht 403-Blockaden
-- Falls auch Jina fehlschlägt: Artikel NICHT aufnehmen
-- Schreibe NUR Fakten die du tatsächlich im Artikel gelesen hast
+- Versuche den Artikel via WebFetch auf `https://r.jina.ai/ARTICLE_URL` zu lesen
+- Falls das nicht funktioniert: Nutze nur Fakten aus den WebSearch-Snippets
+- Cross-referenziere jeden Fakt aus mindestens 2 unabhängigen Suchtreffern
+- ERFINDE KEINE Details die weder im Artikel noch in den Snippets stehen
+- Bei Zahlen/Statistiken: nur aufnehmen wenn sie explizit in einem Snippet oder gelesenen Artikel stehen
 
 ### Nur spezifische Artikel-URLs
 - Jede URL muss zu einem konkreten Artikel führen, nicht zu einer Index- oder Kategorie-Seite
