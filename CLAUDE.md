@@ -20,14 +20,10 @@ Täglicher Golf/Putting-News-Digest für das Putting Lab Projekt (Indoor-Putting
 - RICHTIG: "Woodland gewinnt die Houston Open mit Turnierrekord von 259 Schlägen (-21)"
 
 ### Quellen-Verifikation (PFLICHT)
-- Verifiziere JEDEN Artikel über den Proxy mit Bash/curl (NICHT WebFetch):
-  ```bash
-  curl -s "https://feed.putting-lab.ch/api/fetch?url=ENCODED_ARTICLE_URL"
-  ```
-- Der Proxy gibt JSON zurück mit einem `content` Feld (Artikel-Text)
-- Nutze WebFetch NICHT für den Proxy (Vercel blockiert WebFetch-Requests)
-- Stelle sicher, dass deine Zusammenfassung NUR Fakten enthält, die im zurückgegebenen Text stehen
-- Kein Artikel darf aufgenommen werden, ohne dass sein Inhalt über den Proxy verifiziert wurde
+- Verifiziere JEDEN Artikel mit WebFetch bevor du ihn aufnimmst
+- Wenn WebFetch fehlschlägt (403, Timeout): Artikel NICHT aufnehmen
+- Schreibe NUR Fakten in die Zusammenfassung, die du tatsächlich im Artikel gelesen hast
+- Artikel die du nicht lesen konntest, werden weggelassen
 
 ### Nur spezifische Artikel-URLs
 - Jede URL muss zu einem konkreten Artikel führen, nicht zu einer Index- oder Kategorie-Seite
