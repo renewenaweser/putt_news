@@ -20,10 +20,12 @@ Täglicher Golf/Putting-News-Digest für das Putting Lab Projekt (Indoor-Putting
 - RICHTIG: "Woodland gewinnt die Houston Open mit Turnierrekord von 259 Schlägen (-21)"
 
 ### Quellen-Verifikation (PFLICHT)
-- Verifiziere JEDEN Artikel mit WebFetch bevor du ihn aufnimmst
-- Wenn WebFetch fehlschlägt (403, Timeout): Artikel NICHT aufnehmen
-- Schreibe NUR Fakten in die Zusammenfassung, die du tatsächlich im Artikel gelesen hast
-- Artikel die du nicht lesen konntest, werden weggelassen
+Probiere diese Methoden in Reihenfolge bis eine funktioniert:
+1. `WebFetch` direkt auf die Artikel-URL
+2. `curl -s -L -H "User-Agent: Mozilla/5.0" "ARTICLE_URL"` via Bash
+3. Google Cache: WebFetch auf `https://webcache.googleusercontent.com/search?q=cache:ARTICLE_URL`
+4. Falls alle drei scheitern: Artikel NICHT aufnehmen
+- Schreibe NUR Fakten die du tatsächlich im Artikel gelesen hast
 
 ### Nur spezifische Artikel-URLs
 - Jede URL muss zu einem konkreten Artikel führen, nicht zu einer Index- oder Kategorie-Seite
