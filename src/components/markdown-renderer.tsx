@@ -44,7 +44,7 @@ export function MarkdownRenderer({
   className,
 }: MarkdownRendererProps) {
   return (
-    <div className={`prose prose-lg max-w-none ${className || ""}`}>
+    <div className={`prose prose-lg max-w-none overflow-hidden ${className || ""}`}>
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
         {content}
       </ReactMarkdown>

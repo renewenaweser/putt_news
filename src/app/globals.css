@@ -25,6 +25,8 @@ html {
   color: var(--color-brand-green);
   text-decoration: underline;
   text-underline-offset: 2px;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .prose a:hover {
