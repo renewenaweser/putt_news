@@ -36,6 +36,15 @@ Täglicher Golf/Putting-News-Digest für das Putting Lab Projekt (Indoor-Putting
 - FALSCH: proprietaere, Hoehe, Geraet, gruendet, laeuft, uebertraegt
 - RICHTIG: proprietäre, Höhe, Gerät, gründet, läuft, überträgt
 
+### Headline (H1)
+- Die erste Zeile jedes Digests (`# …`) ist die Schlagzeile und wird auf der Website als Titel angezeigt (`src/lib/content.ts` liest die erste `# `-Zeile)
+- NIEMALS eine generische Datums-Headline verwenden
+- FALSCH: `# Golf & Putting News - 23. Juni 2026`
+- RICHTIG: `# Clark gewinnt die US Open wire-to-wire, Yamashita siegt im Meijer-Stechen, Scheffler verpasst den Grand Slam`
+- Die Headline fasst die 2-3 wichtigsten News des Tages zusammen, durch Kommas getrennt
+- Wenn eine einzelne News klar dominiert, reicht eine einzelne Schlagzeile (z.B. `# Korda gewinnt die US Women's Open mit zwei zitternden Putts`)
+- Es gelten dieselben Regeln wie im Body: echte Umlaute, nur verifizierte Fakten, keine erfundenen Zahlen
+
 ### Review-Pass nach Erstellung
 Prüfe vor dem Speichern/Committen den gesamten Digest auf:
 1. Enthält jeder Eintrag NUR Fakten aus dem verlinkten Artikel?
@@ -43,6 +52,7 @@ Prüfe vor dem Speichern/Committen den gesamten Digest auf:
 3. Führt jede URL zu einem spezifischen Artikel (nicht Index/Kategorie)?
 4. Ist jeder Artikel tatsächlich aus den letzten 7 Tagen?
 5. Gibt es Duplikate mit früheren Digests?
+6. Ist die H1-Headline inhaltlich (Top-News des Tages) und NICHT generisch mit Datum?
 
 ### Duplikat-Check
 - Vor jeder Recherche die letzten 7 Tages-Dateien in `news/` lesen
