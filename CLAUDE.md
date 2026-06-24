@@ -38,12 +38,20 @@ Täglicher Golf/Putting-News-Digest für das Putting Lab Projekt (Indoor-Putting
 
 ### Headline (H1)
 - Die erste Zeile jedes Digests (`# …`) ist die Schlagzeile und wird auf der Website als Titel angezeigt (`src/lib/content.ts` liest die erste `# `-Zeile)
+- Die Headline nennt GENAU EINE News — die wichtigste/dominanteste des Tages. KEINE Aufzählung mehrerer News, KEINE durch Kommas getrennte Liste.
 - NIEMALS eine generische Datums-Headline verwenden
-- FALSCH: `# Golf & Putting News - 23. Juni 2026`
-- RICHTIG: `# Clark gewinnt die US Open wire-to-wire, Yamashita siegt im Meijer-Stechen, Scheffler verpasst den Grand Slam`
-- Die Headline fasst die 2-3 wichtigsten News des Tages zusammen, durch Kommas getrennt
-- Wenn eine einzelne News klar dominiert, reicht eine einzelne Schlagzeile (z.B. `# Korda gewinnt die US Women's Open mit zwei zitternden Putts`)
+- FALSCH (generisch): `# Golf & Putting News - 23. Juni 2026`
+- FALSCH (mehrere News aneinandergereiht): `# Clark gewinnt die US Open wire-to-wire, Yamashita siegt im Meijer-Stechen, Scheffler verpasst den Grand Slam`
+- RICHTIG (eine dominante News): `# Korda gewinnt die US Women's Open mit zwei zitternden Putts`
+- Wähle die News mit der grössten Tragweite. Stehen mehrere gleichwertig nebeneinander, nimm die für das Putting Lab relevanteste.
 - Es gelten dieselben Regeln wie im Body: echte Umlaute, nur verifizierte Fakten, keine erfundenen Zahlen
+
+### Länge & Stil (konsistent halten)
+- Orientiere dich am Umfang der Vorwochen-Digests: ca. 6-9 News-Einträge, insgesamt rund 1400-1650 Wörter. Das ist eine weiche Obergrenze, keine Untergrenze — überschreite sie nicht deutlich, im Zweifel kürzer.
+- Pro Eintrag 2-4 Sätze mit den wichtigsten verifizierten Fakten. NICHT jede Zahl, Quote, Uhrzeit und jeden Spec in Klammern nachschieben — die zentralen Fakten genügen.
+- Die Zusammenfassung bleibt bei ca. 100-140 Wörtern.
+- Der Quellen-Verifikation-Footer bleibt im Umfang der Vorwochen-Digests (Quellenliste plus knappe Hinweise, was bewusst weggelassen wurde) und wird NICHT länger — keine wortwörtliche Wiederholung sämtlicher Eintrags-Details aus dem Body.
+- Im Zweifel kürzer und präziser statt länger und ausgeschmückt.
 
 ### Review-Pass nach Erstellung
 Prüfe vor dem Speichern/Committen den gesamten Digest auf:
@@ -52,7 +60,8 @@ Prüfe vor dem Speichern/Committen den gesamten Digest auf:
 3. Führt jede URL zu einem spezifischen Artikel (nicht Index/Kategorie)?
 4. Ist jeder Artikel tatsächlich aus den letzten 7 Tagen?
 5. Gibt es Duplikate mit früheren Digests?
-6. Ist die H1-Headline inhaltlich (Top-News des Tages) und NICHT generisch mit Datum?
+6. Nennt die H1-Headline GENAU EINE dominante News (keine Kommaliste) und ist NICHT generisch mit Datum?
+7. Liegt der Digest im üblichen Umfang (~6-9 Einträge, ~1400-1650 Wörter) und sind die Einträge nicht mit Klammer-Details überladen?
 
 ### Duplikat-Check
 - Vor jeder Recherche die letzten 7 Tages-Dateien in `news/` lesen
@@ -61,6 +70,19 @@ Prüfe vor dem Speichern/Committen den gesamten Digest auf:
 ### Aktualität
 - NUR Artikel aus den letzten 7 Tagen
 - Veröffentlichungsdatum jedes Artikels prüfen und in Klammern angeben
+
+### Turnier-Jahresausgabe (KRITISCH)
+- Der Golfkalender wiederholt sich jährlich — dieselben Turniere (KLM Open, Swiss Challenge, US Women's Open, Memorial usw.) finden jedes Jahr in derselben Woche statt
+- Ein Suchtreffer kann aus dem VORJAHR stammen, obwohl das Turnier auch dieses Jahr läuft. Prüfe bei JEDEM Turnier-Artikel die Jahreszahl in URL UND Text (z.B. „…-2025/…" in der URL = Vorjahr, NICHT verwenden)
+- Übernimm NIEMALS Runde-1-/Leaderboard-Ergebnisse aus einem Vorjahres-Artikel für ein gerade gestartetes Turnier. Wenn die diesjährigen Ergebnisse noch nicht vorliegen: Eintrag weglassen oder Event nur als „gestartet, Ergebnisse noch nicht verfügbar" erwähnen
+
+### Output-Format
+- Dateiname: `news/YYYY-MM-DD.md` (heutiges Datum)
+- Erste Zeile: die H1-Headline nach obiger Regel (genau EINE dominante News)
+- Danach `## Zusammenfassung` (100-140 Wörter)
+- Danach die News nach Kategorien gruppiert, je als `## …`-Überschrift. Übliche Kategorien: «Putting & Technik», «Technologie & Innovation», «Golf Business & Markt», «Tour & Performance», «Golf Schweiz». Leere Kategorien weglassen.
+- Pro Eintrag eine Zeile: `- **[Titel]** ([Veröffentlichungsdatum]) - [2-4 Sätze] | [Quelle(n)] | [spezifische Artikel-URL]`
+- Abschluss: eine `---`-Trennlinie und der kursive `*Quellen-Verifikation: …*`-Footer (kompakt, siehe Länge & Stil)
 
 ## Dateistruktur
 - `news/YYYY-MM-DD.md` - Tägliche News-Digests
