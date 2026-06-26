@@ -19,7 +19,8 @@ Täglicher Golf/Putting-News-Digest für das Putting Lab Projekt (Indoor-Putting
 - FALSCH: "Woodland gewinnt mit 8,3 Strokes Gained Putting" (wenn nicht im Artikel)
 - RICHTIG: "Woodland gewinnt die Houston Open mit Turnierrekord von 259 Schlägen (-21)"
 
-### Quellen-Verifikation (PFLICHT)
+### Fakten-Verifikation (PFLICHT)
+- Dies ist eine Recherche-Regel, KEIN Output-Abschnitt: erzeuge daraus NIEMALS einen Quellen-/Verifikations-Footer im Digest
 - Nutze nur Fakten die in den WebSearch-Snippets stehen
 - Cross-referenziere jeden Fakt aus mindestens 2 unabhängigen Suchtreffern
 - ERFINDE KEINE Details die nicht in den Snippets stehen
@@ -50,7 +51,6 @@ Täglicher Golf/Putting-News-Digest für das Putting Lab Projekt (Indoor-Putting
 - Orientiere dich am Umfang der Vorwochen-Digests: ca. 6-9 News-Einträge, insgesamt rund 1400-1650 Wörter. Das ist eine weiche Obergrenze, keine Untergrenze — überschreite sie nicht deutlich, im Zweifel kürzer.
 - Pro Eintrag 2-4 Sätze mit den wichtigsten verifizierten Fakten. NICHT jede Zahl, Quote, Uhrzeit und jeden Spec in Klammern nachschieben — die zentralen Fakten genügen.
 - Die Zusammenfassung bleibt bei ca. 100-140 Wörtern.
-- Der Quellen-Verifikation-Footer bleibt im Umfang der Vorwochen-Digests (Quellenliste plus knappe Hinweise, was bewusst weggelassen wurde) und wird NICHT länger — keine wortwörtliche Wiederholung sämtlicher Eintrags-Details aus dem Body.
 - Im Zweifel kürzer und präziser statt länger und ausgeschmückt.
 
 ### Review-Pass nach Erstellung
@@ -82,7 +82,7 @@ Prüfe vor dem Speichern/Committen den gesamten Digest auf:
 - Danach `## Zusammenfassung` (100-140 Wörter)
 - Danach die News nach Kategorien gruppiert, je als `## …`-Überschrift. Übliche Kategorien: «Putting & Technik», «Technologie & Innovation», «Golf Business & Markt», «Tour & Performance», «Golf Schweiz». Leere Kategorien weglassen.
 - Pro Eintrag eine Zeile: `- **[Titel]** ([Veröffentlichungsdatum]) - [2-4 Sätze] | [Quelle(n)] | [spezifische Artikel-URL]`
-- Abschluss: eine `---`-Trennlinie und der kursive `*Quellen-Verifikation: …*`-Footer (kompakt, siehe Länge & Stil)
+- Der Digest endet mit dem letzten Kategorie-Eintrag. KEINEN Quellen-Verifikation-Footer und KEINE zusammenfassende Quellenliste am Ende anhängen — die Quellen stehen bereits pro Eintrag in der `| Quelle(n) | URL`-Angabe
 
 ## Dateistruktur
 - `news/YYYY-MM-DD.md` - Tägliche News-Digests
