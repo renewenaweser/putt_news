@@ -48,7 +48,7 @@ Täglicher Golf/Putting-News-Digest für das Putting Lab Projekt (Indoor-Putting
 - Es gelten dieselben Regeln wie im Body: echte Umlaute, nur verifizierte Fakten, keine erfundenen Zahlen
 
 ### Länge & Stil (konsistent halten)
-- Orientiere dich am Umfang der Vorwochen-Digests: ca. 6-9 News-Einträge, insgesamt rund 1400-1650 Wörter. Das ist eine weiche Obergrenze, keine Untergrenze — überschreite sie nicht deutlich, im Zweifel kürzer.
+- Orientiere dich am Umfang der Vorwochen-Digests: ca. 6-9 News-Einträge, insgesamt rund 650-1100 Wörter. Das ist eine weiche Obergrenze, keine Untergrenze — überschreite sie nicht deutlich, im Zweifel kürzer.
 - Pro Eintrag 2-4 Sätze mit den wichtigsten verifizierten Fakten. NICHT jede Zahl, Quote, Uhrzeit und jeden Spec in Klammern nachschieben — die zentralen Fakten genügen.
 - Die Zusammenfassung bleibt bei ca. 100-140 Wörtern.
 - Im Zweifel kürzer und präziser statt länger und ausgeschmückt.
@@ -61,7 +61,8 @@ Prüfe vor dem Speichern/Committen den gesamten Digest auf:
 4. Ist jeder Artikel tatsächlich aus den letzten 7 Tagen?
 5. Gibt es Duplikate mit früheren Digests?
 6. Nennt die H1-Headline GENAU EINE dominante News (keine Kommaliste) und ist NICHT generisch mit Datum?
-7. Liegt der Digest im üblichen Umfang (~6-9 Einträge, ~1400-1650 Wörter) und sind die Einträge nicht mit Klammer-Details überladen?
+7. Liegt der Digest im üblichen Umfang (~6-9 Einträge, ~650-1100 Wörter) und sind die Einträge nicht mit Klammer-Details überladen?
+8. Hat jeder Eintrag das Datum im Kurzformat `(dd.mm.)` ohne Jahr (sonst zeigt die App kein Datum an)?
 
 ### Duplikat-Check
 - Vor jeder Recherche die letzten 7 Tages-Dateien in `news/` lesen
@@ -81,8 +82,10 @@ Prüfe vor dem Speichern/Committen den gesamten Digest auf:
 - Erste Zeile: die H1-Headline nach obiger Regel (genau EINE dominante News)
 - Danach `## Zusammenfassung` (100-140 Wörter)
 - Danach die News nach Kategorien gruppiert, je als `## …`-Überschrift. Übliche Kategorien: «Putting & Technik», «Technologie & Innovation», «Golf Business & Markt», «Tour & Performance», «Golf Schweiz». Leere Kategorien weglassen.
-- Pro Eintrag eine Zeile: `- **[Titel]** ([Veröffentlichungsdatum]) - [2-4 Sätze] | [Quelle(n)] | [spezifische Artikel-URL]`
+- Pro Eintrag eine Zeile: `- **[Titel]** ([dd.mm.]) - [2-4 Sätze] | [Quelle(n)] | [spezifische Artikel-URL]`
+- Das Veröffentlichungsdatum in Klammern IMMER im Kurzformat `(dd.mm.)` ohne Jahr (z.B. `(25.06.)`). NICHT `(25.06.2026)` — das Volljahr-Format bricht die Datumsanzeige in der keep-putting-App
 - Der Digest endet mit dem letzten Kategorie-Eintrag. KEINEN Quellen-Verifikation-Footer und KEINE zusammenfassende Quellenliste am Ende anhängen — die Quellen stehen bereits pro Eintrag in der `| Quelle(n) | URL`-Angabe
+- Maschinenlesbare Referenz dieses Formats: `scripts/validate-digest.mjs` (der Validierungs-Linter); ein Digest muss diesen Linter ohne Fehler passieren
 
 ## Dateistruktur
 - `news/YYYY-MM-DD.md` - Tägliche News-Digests
