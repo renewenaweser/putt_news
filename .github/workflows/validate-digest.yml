@@ -1,0 +1,79 @@
+name: validate-digest
+
+# Backstop / Protokoll: lintet geänderte Digests bei jedem Push auf main.
+# BLOCKIERT NICHTS (Vercel deployt unabhängig) — bei Lint-Fehler roter Check
+# plus GitHub-Issue zur Sichtbarkeit. Unabhängig davon, ob die Validator-Routine lief.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "news/**"
+      - "scripts/validate-digest.mjs"
+      - "scripts/validate-digest.test.mjs"
+  pull_request:
+    paths:
+      - "news/**"
+      - "scripts/validate-digest.mjs"
+      - "scripts/validate-digest.test.mjs"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Unit-Tests (Linter)
+        run: node --test scripts/validate-digest.test.mjs
+
+      - name: Geänderte Digests bestimmen
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base="${{ github.event.pull_request.base.sha }}"
+          else
+            base="${{ github.event.before }}"
+          fi
+          head="${{ github.sha }}"
+          if ! git cat-file -e "${base}^{commit}" 2>/dev/null; then base="${head}~1"; fi
+          files=$(git diff --name-only "$base" "$head" -- 'news/*.md' | tr '\n' ' ')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "Geänderte Digests: ${files:-(keine)}"
+
+      - name: Geänderte Digests linten
+        id: lint
+        if: steps.changed.outputs.files != ''
+        run: |
+          set -o pipefail
+          node scripts/validate-digest.mjs ${{ steps.changed.outputs.files }} | tee lint-report.json
+
+      - name: Issue bei Lint-Fehler (nur auf main-Push)
+        if: always() && steps.lint.outcome == 'failure' && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Digest lint failure: $(date -u +%Y-%m-%d)"
+          {
+            echo "Der Digest-Linter hat beim Push \`${{ github.sha }}\` Fehler gemeldet."
+            echo "Geänderte Dateien: ${{ steps.changed.outputs.files }}"
+            echo
+            echo '```json'
+            cat lint-report.json 2>/dev/null || echo '(kein Report)'
+            echo '```'
+          } > issue-body.md
+          existing=$(gh issue list --search "$title in:title" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file issue-body.md
+          else
+            gh issue create --title "$title" --body-file issue-body.md --label "" || gh issue create --title "$title" --body-file issue-body.md
+          fi
