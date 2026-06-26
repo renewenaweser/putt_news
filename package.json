@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "validate-digest": "node scripts/validate-digest.mjs",
+    "test:digest": "node --test scripts/validate-digest.test.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
